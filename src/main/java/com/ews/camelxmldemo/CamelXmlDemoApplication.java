@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource("classpath:my-camel.xml")
+@ImportResource("classpath:camel-context.xml")
 public class CamelXmlDemoApplication {
 
 	public static void main(String[] args) {
