@@ -38,7 +38,7 @@ public class HttpMultiCastAggregationStrategy implements AggregationStrategy {
             merge.putPOJO("request02", node2);
             System.out.println(merge.toString());
 
-            e1.getIn().setBody(merge, JsonNode.class);
+            e1.getIn().setBody(merge.toString(), JsonNode.class);
             return e1;
         }
 
