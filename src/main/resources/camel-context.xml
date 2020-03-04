@@ -37,7 +37,15 @@
                 <to uri="direct:quotation"/>
                 <to uri="direct:triage"/>
             </multicast>
-            <to uri="jslt:responseJSLT.vm" />
+            <setHeader name="CamelJsltString">
+                <constant>
+                    {
+                        "id" : .request01.request01.id,
+                        "process" : .request01.request01.process
+                    }
+                </constant>
+            </setHeader>
+            <to uri="jslt:dummy" />
         </route>
 
         <route id="process01">

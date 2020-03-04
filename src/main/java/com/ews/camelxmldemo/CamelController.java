@@ -1,6 +1,5 @@
 package com.ews.camelxmldemo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +24,7 @@ public class CamelController {
     private CamelContext camelContext;
 
     @PostMapping(value = "/route")
-    JsonNode route(@RequestBody JsonNode jsonNode) throws JsonProcessingException {
+    JsonNode route(@RequestBody JsonNode jsonNode) throws Exception {
         final ProducerTemplate producerTemplate = camelContext.createProducerTemplate();
         String json = (String) producerTemplate.requestBody("direct:httpMultcastAsync", jsonNode.asText());
         log.info("Response called Http Multicast : " +json);
